@@ -10,7 +10,7 @@
 <p align="center">24h, 7d and 30d stats on pump.fun’s callout cards, with your own record one click away.</p>
 
 <p align="center">
-  <a href="https://github.com/MarkUnthank/pump-fun-callout-stats/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/MarkUnthank/pump-fun-callout-stats?style=flat-square&color=53e8bd"></a>
+  <a href="https://github.com/MarkUnthank/pump-fun-callout-stats/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/MarkUnthank/pump-fun-callout-stats?style=flat-square&color=53e8bd&label=version"></a>
   <a href="https://github.com/MarkUnthank/pump-fun-callout-stats/actions/workflows/checks.yml"><img alt="Extension checks" src="https://github.com/MarkUnthank/pump-fun-callout-stats/actions/workflows/checks.yml/badge.svg"></a>
   <a href="#install"><img alt="Chrome Web Store: review pending" src="https://img.shields.io/badge/Chrome_Web_Store-review_pending-f4c542?style=flat-square&logo=googlechrome&logoColor=white"></a>
   <a href="manifest.json"><img alt="Chrome Manifest V3" src="https://img.shields.io/badge/Chrome-Manifest_V3-4285f4?style=flat-square&logo=googlechrome&logoColor=white"></a>
