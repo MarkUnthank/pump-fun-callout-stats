@@ -1,0 +1,8 @@
+/* The toolbar popup shows the same panel on the site's navy. */
+body {
+  width: 400px;
+  margin: 0;
+  background:
+    radial-gradient(30rem 16rem at 50% -7rem, rgba(139, 92, 255, 0.18), transparent 70%),
+    var(--bg);
+}

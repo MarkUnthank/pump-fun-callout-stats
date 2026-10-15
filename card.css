@@ -1,0 +1,201 @@
+/* Caller stats inside Pump's callout cards. Matched to Pump's own card parts
+   (the position mini-card and action chips, 2026-10-15): Geist from the page,
+   its surfaces, hairlines, 10px card radius and green/red figures. */
+:host {
+  all: initial;
+  display: block;
+  color-scheme: dark;
+  --surface: #131316;
+  --surface-hover: #1b1b1f;
+  --line: #232327;
+  --line-hover: #303036;
+  --text: #e4e4e7;
+  --text-2: #a1a1aa;
+  --text-3: #71717a;
+  --accent: #86efac;
+  --gain: #4ade80;
+  --loss: #f87171;
+  --warn: #facc15;
+}
+
+.caller-stats {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 36px;
+  margin: 0;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text-2);
+  font: 500 12px/16px var(--font-sans, Geist, ui-sans-serif, system-ui, sans-serif);
+  font-variant-numeric: tabular-nums;
+  text-align: left;
+  cursor: pointer;
+  container-type: inline-size;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  -webkit-font-smoothing: antialiased;
+}
+.caller-stats:hover {
+  background: var(--surface-hover);
+  border-color: var(--line-hover);
+}
+.caller-stats:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+.icon {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  width: 14px;
+  height: 14px;
+  color: var(--text-3);
+}
+.icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Idle, loading and error: one line. */
+.bar-label {
+  color: var(--text);
+  white-space: nowrap;
+}
+.bar-note {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--text-3);
+  font-weight: 400;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.bar-action {
+  margin-left: auto;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.caller-stats:hover .bar-action {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+[data-state='loading'] .bar-action {
+  color: var(--text-3);
+  text-decoration: none;
+}
+[data-state='loading'] > .icon {
+  animation: pulse 1.1s ease-in-out infinite;
+}
+[data-state='error'] > .icon {
+  color: var(--loss);
+}
+[data-reason='limited'] > .icon {
+  color: var(--warn);
+}
+@keyframes pulse {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+/* Loaded: a header row, then 24h, 7d and 30d. */
+[data-state='ready'] {
+  display: block;
+  padding: 8px 12px 9px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-content: space-between;
+  column-gap: 12px;
+  row-gap: 3px;
+}
+.row {
+  display: contents;
+}
+.head > * {
+  padding-bottom: 2px;
+  color: var(--text-3);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 14px;
+}
+.lead {
+  display: flex;
+  align-items: center;
+}
+.lead.stale .icon {
+  color: var(--warn);
+}
+.period {
+  color: var(--text-2);
+}
+.num {
+  overflow: hidden;
+  color: var(--text);
+  text-align: right;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.num.gain {
+  color: var(--gain);
+}
+.num.loss {
+  color: var(--loss);
+}
+.narrow {
+  display: none;
+}
+
+/* Pump's columns can be as narrow as 240px: shorter headers, then no entry cap. */
+@container (max-width: 250px) {
+  .wide {
+    display: none;
+  }
+  .narrow {
+    display: inline;
+  }
+  .grid {
+    column-gap: 8px;
+  }
+  .bar-note {
+    display: none;
+  }
+}
+@container (max-width: 180px) {
+  .grid {
+    grid-template-columns: repeat(3, auto);
+  }
+  .row > :nth-child(3) {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .caller-stats {
+    transition: none;
+  }
+  [data-state='loading'] > .icon {
+    animation: none;
+  }
+}
+
+/* Separate buttons keep reload distinct from opening the cached profile. */
+[hidden] { display: none !important; }
+.stats-controls { display: flex; align-items: flex-start; gap: 4px; }
+.stats-controls .caller-stats { flex: 1; min-width: 0; }
+.reload-stats {
+  display: inline-grid; place-items: center; flex: none;
+  width: 30px; height: 30px; padding: 0;
+  border: 1px solid var(--line); border-radius: 8px;
+  background: var(--surface); cursor: pointer;
+}
+.reload-stats .icon { color: var(--accent); }
+.reload-stats:hover { background: var(--surface-hover); border-color: var(--line-hover); }
+.reload-stats:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.reload-stats:disabled { cursor: wait; opacity: 0.5; }
+.reload-stats[data-reason='error'] .icon { color: var(--warn); }

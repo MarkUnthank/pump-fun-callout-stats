@@ -1,0 +1,28 @@
+{
+  "name": "pump-fun-callout-stats",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "package": "npm test && node scripts/package.mjs"
+  },
+  "devDependencies": {
+    "fflate": "0.8.3",
+    "linkedom": "0.18.13"
+  },
+  "description": "Caller stats on pump.fun. Made by notrandom.fun.",
+  "license": "MIT",
+  "author": {
+    "name": "notrandom.fun",
+    "url": "https://notrandom.fun"
+  },
+  "homepage": "https://notrandom.fun/pump-fun-callout-stats/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarkUnthank/pump-fun-callout-stats.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MarkUnthank/pump-fun-callout-stats/issues"
+  }
+}
