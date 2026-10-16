@@ -12,21 +12,18 @@
 <p align="center">
   <a href="https://github.com/MarkUnthank/pump-fun-callout-stats/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/MarkUnthank/pump-fun-callout-stats?style=flat-square&color=53e8bd&label=version"></a>
   <a href="https://github.com/MarkUnthank/pump-fun-callout-stats/actions/workflows/checks.yml"><img alt="Extension checks" src="https://github.com/MarkUnthank/pump-fun-callout-stats/actions/workflows/checks.yml/badge.svg"></a>
-  <a href="#install"><img alt="Chrome Web Store: review pending" src="https://img.shields.io/badge/Chrome_Web_Store-review_pending-f4c542?style=flat-square&logo=googlechrome&logoColor=white"></a>
+  <a href="https://chromewebstore.google.com/detail/callout-stats-for-pumpfun/nchcpbafdigilehpnfkhfpogopgcjneg"><img alt="Available on the Chrome Web Store" src="https://img.shields.io/badge/Chrome_Web_Store-available-53e8bd?style=flat-square&logo=googlechrome&logoColor=white"></a>
   <a href="manifest.json"><img alt="Chrome Manifest V3" src="https://img.shields.io/badge/Chrome-Manifest_V3-4285f4?style=flat-square&logo=googlechrome&logoColor=white"></a>
   <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-a89cff?style=flat-square"></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/MarkUnthank/pump-fun-callout-stats/releases/latest/download/callout-stats.zip"><img alt="Download for Chrome" src="https://img.shields.io/badge/Download_for_Chrome-53e8bd?style=for-the-badge&logo=googlechrome&logoColor=10101d"></a>
+  <a href="https://chromewebstore.google.com/detail/callout-stats-for-pumpfun/nchcpbafdigilehpnfkhfpogopgcjneg"><img alt="Add to Chrome" src="https://img.shields.io/badge/Add_to_Chrome-53e8bd?style=for-the-badge&logo=googlechrome&logoColor=10101d"></a>
   <br>
   <a href="https://notrandom.fun/pump-fun-callout-stats/">Website</a> ·
   <a href="https://notrandom.fun/pump-fun-callout-stats/#privacy">Privacy</a> ·
   <a href="https://github.com/MarkUnthank/pump-fun-callout-stats/issues">Report a bug</a>
 </p>
-
-> [!IMPORTANT]
-> **Chrome Web Store review is pending.** We’re waiting for Google’s review before the extension is listed. You can use the downloadable extension now with Chrome’s Developer mode. The normal **Add to Chrome** install will be available once the listing is approved.
 
 ## What you get
 
@@ -42,14 +39,11 @@
 
 ## Install
 
-**No build tools or terminal needed.**
+1. Open **[Callout Stats for pump.fun on the Chrome Web Store](https://chromewebstore.google.com/detail/callout-stats-for-pumpfun/nchcpbafdigilehpnfkhfpogopgcjneg)** in desktop Chrome.
+2. Click **Add to Chrome**, then confirm **Add extension**.
+3. Open or refresh **[pump.fun](https://pump.fun/)**.
 
-1. **[Download the extension ZIP](https://github.com/MarkUnthank/pump-fun-callout-stats/releases/latest/download/callout-stats.zip)** and unzip it. Keep the extracted folder somewhere permanent.
-2. In desktop Chrome, type **`chrome://extensions`** into the address bar and turn on **Developer mode**.
-3. Click **Load unpacked** and select the extracted folder containing **`manifest.json`**. Select the folder, not the ZIP.
-4. Open or refresh **[pump.fun](https://pump.fun/)**. That’s it.
-
-Chrome requires these manual steps for an unpacked extension. See [Google’s installation guide](https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked) if you need a hand. Chrome on phones does not support this desktop extension.
+Free, with no build tools or terminal needed. Chrome on phones does not support this desktop extension.
 
 ### First lookup
 
@@ -59,7 +53,9 @@ For your own stats, click **My callout stats** in the corner of pump.fun, or pin
 
 ### Update or remove
 
-Download the latest ZIP, replace the files in your existing extension folder, then click **Reload** on its card at `chrome://extensions` and refresh pump.fun. Developer-mode installs do not update automatically.
+Chrome manages updates for Chrome Web Store installs.
+
+For a manual ZIP install, [download the latest ZIP](https://github.com/MarkUnthank/pump-fun-callout-stats/releases/latest/download/callout-stats.zip), replace the files in your existing extension folder, then click **Reload** on its card at `chrome://extensions` and refresh pump.fun.
 
 To remove it, click **Remove** at `chrome://extensions`. This also clears its local extension storage.
 
@@ -117,7 +113,16 @@ The hosted service is shared and rate-limited. Refresh may return an existing sn
 
 ## For contributors
 
-You can load the repository folder directly with **Load unpacked**. For tests and a distributable ZIP, use **Node.js 24+**:
+### Load unpacked
+
+1. [Download the extension ZIP](https://github.com/MarkUnthank/pump-fun-callout-stats/releases/latest/download/callout-stats.zip) and unzip it, or clone this repository.
+2. Open `chrome://extensions` in desktop Chrome and enable **Developer mode**.
+3. Click **Load unpacked** and select the folder containing `manifest.json`.
+4. Open or refresh [pump.fun](https://pump.fun/).
+
+### Tests and packaging
+
+For tests and a distributable ZIP, use **Node.js 24+**:
 
 ```sh
 npm ci
