@@ -55,7 +55,7 @@ For your own stats, click **My callout stats** in the corner of pump.fun, or pin
 
 Chrome manages updates for Chrome Web Store installs.
 
-For a manual ZIP install, download the latest ZIP, replace the files in your existing extension folder, then click **Reload** on its card at `chrome://extensions` and refresh pump.fun.
+For a manual ZIP install, [download the latest ZIP](https://github.com/MarkUnthank/pump-fun-callout-stats/releases/latest/download/callout-stats.zip), replace the files in your existing extension folder, then click **Reload** on its card at `chrome://extensions` and refresh pump.fun.
 
 To remove it, click **Remove** at `chrome://extensions`. This also clears its local extension storage.
 
