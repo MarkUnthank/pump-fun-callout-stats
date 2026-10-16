@@ -1,6 +1,10 @@
 Made by **[notrandom.fun](https://notrandom.fun)**.
 
-**Chrome Web Store review is pending.** This download is for installation with Chrome's Developer mode while we wait for Google's review.
+**[Add to Chrome from the Chrome Web Store](https://chromewebstore.google.com/detail/callout-stats-for-pumpfun/nchcpbafdigilehpnfkhfpogopgcjneg)** for the standard install. No Developer mode or ZIP download needed.
+
+### Manual ZIP install
+
+The GitHub ZIP below is available for loading the extension unpacked:
 
 1. Download **callout-stats.zip** below and unzip it.
 2. Open `chrome://extensions` in desktop Chrome and enable **Developer mode**.
